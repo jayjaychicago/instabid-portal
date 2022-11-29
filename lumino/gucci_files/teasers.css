@@ -1,0 +1,46 @@
+.TTteaser {
+  font-size: 1rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+}
+
+.TTteaser__rating {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+.TTteaser__star svg {
+  width: 9px;
+  height: 9px;
+}
+
+.TTteaser__icon--full {
+  fill: #000;
+}
+
+.TTteaser__icon--half {
+  fill: #aaa;
+  color: #000;
+}
+
+.TTteaser__icon--empty {
+  fill: #aaa;
+}
+
+.TTteaser__read-qa,
+.TTteaser__read-comments,
+.TTteaser__read-reviews,
+.TTteaser__write-review {
+  font-size: 1rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  color: #000;
+  text-decoration: underline;
+}
+
+.TTteaser__write-review {
+  border: none;
+  text-decoration: underline;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}

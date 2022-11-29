@@ -1,0 +1,76 @@
+(function(FS) {
+  var session = FS.getCurrentSession(), sessionUrl = FS.getCurrentSessionURL();
+  function retryWithBackoff(condition, callback, maxWait, failureMsg, timeoutCallback) {
+    var totalTimeExpired = 0;
+    var wait = 64;
+    var resultFn = function() {
+      if (condition()) {
+        callback();
+        return;
+      }
+      wait = Math.min(wait * 2, 1024);
+      if (totalTimeExpired > maxWait) {
+        FS.log('warn', failureMsg);
+        !!timeoutCallback && timeoutCallback(failureMsg);
+        return;
+      }
+      totalTimeExpired += wait
+      setTimeout(resultFn, wait);
+    };
+    return resultFn;
+  }
+  function loadSession(key) {
+	var lastSession = window['localStorage'].getItem(key);
+    if (!lastSession) {
+      lastSession = FS._cookies()[key];
+    }
+    return lastSession
+  }
+  function saveSession(key, session) {
+    window['localStorage'].setItem(key, session);
+  }
+
+  (function() {
+    var bs;
+	var bugsnagSessionUrl = sessionUrl + '?integration_src=bugsnag';
+    if (window['bugsnagClient']) {
+      // For bugsnag API versions 4 through 6
+      bs = window.bugsnagClient;
+    } else if (window['Bugsnag']) {
+      // For bugsnag API version 3, or 7+ (as of Dec. 2020)
+      bs = window.Bugsnag;
+    } else {
+      FS.log("warn", "Bugsnag script was not loaded even though the Bugsnag integration is turned on.");
+      FS('stat', {
+        eventType: 'INTEGRATION_INITIALIZED',
+        payload: {
+          provider_id: 'bugsnag',
+          event_status: 'FAILURE',
+          metadata: { detail: "Bugsnag script was not loaded even though the Bugsnag integration is turned on.", sessionUrl: bugsnagSessionUrl }
+        }
+      })
+      return;
+    }
+    if (bs.addMetadata) {
+      // Recent versions have this API
+      bs.addMetadata('fullstory', { url: bugsnagSessionUrl })
+    } else {
+      if (!bs.metaData) {
+        bs.metaData = {};
+      }
+      if (!bs.metaData.fullstory) {
+        bs.metaData.fullstory = {};
+      }
+      bs.metaData.fullstory.url = bugsnagSessionUrl;
+    }
+    FS('stat', {
+      eventType: 'INTEGRATION_INITIALIZED',
+      payload: {
+        provider_id: 'bugsnag',
+        event_status: 'SUCCESS',
+        metadata: { sessionUrl: bugsnagSessionUrl }
+      }
+    })
+  })();
+  
+})(window['_fs_namespace'] ? window[window['_fs_namespace']] : window['FS'])
