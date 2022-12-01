@@ -1,3 +1,5 @@
+<HTML>
+  <HEAD>
 <?php
 
 
@@ -80,6 +82,10 @@ Route::run('/');
 
 //echo $auth0->logout();
 
-header($auth0->logout());
+//header($auth0->logout());
+
+    
+ echo "<script type='text/javascript'>window.top.location='" . echo $auth0->logout() . "';</script>"; exit;   
 exit();
 ?>
+    
