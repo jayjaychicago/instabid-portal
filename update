@@ -1,0 +1,2 @@
+cp -R . /opt/homebrew/var/www
+open "http://localhost:8080"
