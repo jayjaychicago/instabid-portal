@@ -13,6 +13,7 @@ require 'vendor/autoload.php';
 
 $env_array =getenv();
 
+/*
 echo "<h3>The list of environment variables with values are :</h3>";
 
 //Print all environment variable names with values
@@ -24,7 +25,7 @@ foreach ($env_array as $key=>$value)
     echo "$key => $value <br />";
 
 }
-
+*/
 // This is all setup in AWS ELB at: https://us-east-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-east-2#/environment/configuration?applicationName=Instabid&environmentId=e-e2vtbrvebm
 // In the "software" config portion of the ELB
 
