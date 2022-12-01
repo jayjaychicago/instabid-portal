@@ -13,8 +13,7 @@ $auth0 = new \Auth0\SDK\Auth0([
   'domain' => $_ENV['AUTH0_DOMAIN'],
   'clientId' => $_ENV['AUTH0_CLIENT_ID'],
   'clientSecret' => $_ENV['AUTH0_CLIENT_SECRET'],
-  'cookieSecret' => $_ENV['AUTH0_COOKIE_SECRET'],
-    'redirectUri' => 'https://instabid.io'
+  'cookieSecret' => $_ENV['AUTH0_COOKIE_SECRET']
 ]); 
 	// 👆 We're continuing from the "getting started" guide linked in "Prerequisites" above. Append this to the index.php file you created there.
 
