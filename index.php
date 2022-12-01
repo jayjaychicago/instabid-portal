@@ -8,11 +8,11 @@
   use Auth0\SDK\Configuration\SdkConfiguration;
 
   $configuration = new SdkConfiguration(
-    domain: 'YOUR_DOMAIN',
-    clientId: 'YOUR_CLIENT_ID',
-    clientSecret: 'YOUR_CLIENT_SECRET',
+    domain: $_ENV['AUTH0_DOMAIN'],
+    clientId: $_ENV['AUTH0_CLIENT_ID'],
+    clientSecret: $_ENV['AUTH0_CLIENT_SECRET'],
     redirectUri: 'http://' . $_SERVER['HTTP_HOST'] . '/callback',
-    cookieSecret: '4f60eb5de6b5904ad4b8e31d9193e7ea4a3013b476ddb5c259ee9077c05e1457'
+    cookieSecret: '9c04c9cccd5f7bdc4e5b7ba41cf8d53528db5704e051d89bd3e3379e0ab83c2c'
   );
 
   $sdk = new Auth0($configuration);
