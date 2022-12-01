@@ -25,15 +25,9 @@ foreach ($env_array as $key=>$value)
 
 }
 
-// Now instantiate the Auth0 class with our configuration:
-/*
-$auth0 = new \Auth0\SDK\Auth0([
-    'domain' => 'https://dev-4lodh4ux8xq4milm.us.auth0.com',
-    'clientId' => 'u9DKrKOTgaiFu76SkPn4u7VHPpV5xZCw',
-    'clientSecret' => 'T4ywxzfVC34VK4SUKghb-Ss53p24iU43AaWhQYMpsSl0iflKhAvnBnMqGBS7gXtT',
-    'cookieSecret' => '9c04c9cccd5f7bdc4e5b7ba41cf8d53528db5704e051d89bd3e3379e0ab83c2c'
-]);
-*/
+// This is all setup in AWS ELB at: https://us-east-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-east-2#/environment/configuration?applicationName=Instabid&environmentId=e-e2vtbrvebm
+// In the "software" config portion of the ELB
+
 
 $auth0 = new \Auth0\SDK\Auth0([
   'domain' => $_ENV['AUTH0_DOMAIN'],
