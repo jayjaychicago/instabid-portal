@@ -23,7 +23,7 @@ $_ENV['AUTH0_CLIENT_ID']='u9DKrKOTgaiFu76SkPn4u7VHPpV5xZCw'
 $_ENV['AUTH0_CLIENT_SECRET']='T4ywxzfVC34VK4SUKghb-Ss53p24iU43AaWhQYMpsSl0iflKhAvnBnMqGBS7gXtT'
 
 # A long secret value we'll use to encrypt session cookies. This can be generated using `openssl rand -hex 32` from our shell.
-$_ENV['AUTH0_COOKIE_SECRET']='SEE COMMENT ABOVE'
+$_ENV['AUTH0_COOKIE_SECRET']='9c04c9cccd5f7bdc4e5b7ba41cf8d53528db5704e051d89bd3e3379e0ab83c2c'
 
 # The base URL of our application.
 $_ENV['AUTH0_BASE_URL']='http://127.0.0.1:3000'
