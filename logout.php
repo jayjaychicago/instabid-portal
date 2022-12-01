@@ -16,4 +16,5 @@ $auth0 = new \Auth0\SDK\Auth0([
 ]); 
 
 echo $auth0->logout();
+header($auth0->logout());
 ?>
