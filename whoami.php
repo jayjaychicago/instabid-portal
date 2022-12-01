@@ -37,16 +37,6 @@ $auth0 = new \Auth0\SDK\Auth0([
 
 // 👆 We're continuing from the steps above. Append this to your index.php file.
 
-// Import our router library:
-use Steampixel\Route;
-
-// Define route constants:
-define('ROUTE_URL_INDEX', rtrim($_ENV['AUTH0_BASE_URL'], '/'));
-define('ROUTE_URL_LOGIN', ROUTE_URL_INDEX . '/login');
-define('ROUTE_URL_CALLBACK', ROUTE_URL_INDEX . '/callback');
-define('ROUTE_URL_LOGOUT', ROUTE_URL_INDEX . '/logout');
-
-
 
 
 
