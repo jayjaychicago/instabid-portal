@@ -136,6 +136,16 @@ class ComposerStaticInit317416576ca09a78dd7a6e12fe6b78a2
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Steampixel' => 
+            array (
+                0 => __DIR__ . '/..' . '/steampixel/simple-php-router/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -150,6 +160,7 @@ class ComposerStaticInit317416576ca09a78dd7a6e12fe6b78a2
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit317416576ca09a78dd7a6e12fe6b78a2::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit317416576ca09a78dd7a6e12fe6b78a2::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit317416576ca09a78dd7a6e12fe6b78a2::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit317416576ca09a78dd7a6e12fe6b78a2::$classMap;
 
         }, null, ClassLoader::class);
