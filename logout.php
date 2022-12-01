@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+/*
 require 'vendor/autoload.php';
 
 // Load our environment variables from the .env file:
@@ -16,5 +17,6 @@ $auth0 = new \Auth0\SDK\Auth0([
 ]); 
 
 //echo $auth0->logout();
+*/
 header($auth0->logout());
 ?>
