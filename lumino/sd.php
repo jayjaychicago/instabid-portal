@@ -43,7 +43,7 @@ $auth0 = new \Auth0\SDK\Auth0([
 
 
 
-
+ $auth0->exchange(ROUTE_URL_CALLBACK);
 // 👆 We're continuing from the "getting started" guide linked in "Prerequisites" above. Append this to the index.php file you created there.
 
 
