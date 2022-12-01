@@ -4,6 +4,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+
 echo "v1";
 // Import the Composer Autoloader to make the SDK classes accessible:
 require 'vendor/autoload.php';
@@ -112,6 +114,8 @@ if ($auth0->getExchangeParameters()) {
 
 // Check if the user is logged in already
 $session = $auth0->getCredentials();
+$_SESSION["auth0User"]=$session;
+
 
 if ($session === null) {
     // User is not logged in!
