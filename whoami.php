@@ -33,7 +33,6 @@ $auth0 = new \Auth0\SDK\Auth0([
 
 
 // Check if the user is logged in already
-echo 'hey'.$auth0;
 
 $session = $auth0->getCredentials();
 
