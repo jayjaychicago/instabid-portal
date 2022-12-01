@@ -1,0 +1,8 @@
+{
+    "require": {
+        "guzzlehttp/psr7": "^2.4",
+        "guzzlehttp/guzzle": "^7.5",
+        "auth0/auth0-php": "^8.3",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
