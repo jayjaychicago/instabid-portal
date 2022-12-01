@@ -18,7 +18,7 @@ error_reporting(E_ALL);
   );
 
   $sdk = new Auth0($configuration);
-echo $sdk;
+var_dump( $sdk);
   require('router.php');
   ?>
   <html>
