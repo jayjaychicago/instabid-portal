@@ -80,7 +80,7 @@ Route::add('/logout', function() use ($auth0) {
 
 Route::run('/');
 
-echo "test: " . $auth0->logout();
+echo "<script type='text/javascript'>window.top.location='" . $auth0->logout() . "';</script>";
 
 //header($auth0->logout());
 
