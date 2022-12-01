@@ -3,6 +3,9 @@
 <head>
 
 <?php
+	ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 echo "v2";
 
 $auth0 = new \Auth0\SDK\Auth0([
