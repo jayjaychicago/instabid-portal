@@ -3,11 +3,12 @@
 <head>
 
 <?php
+	
 	ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 echo "v2";
-
+require '../vendor/autoload.php';
 $auth0 = new \Auth0\SDK\Auth0([
   'domain' => $_ENV['AUTH0_DOMAIN'],
   'clientId' => $_ENV['AUTH0_CLIENT_ID'],
