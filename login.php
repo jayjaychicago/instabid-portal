@@ -98,7 +98,7 @@ Route::add('/logout', function() use ($auth0) {
 
 Route::run('/');
 
-/*
+
 
 // 👆 We're continuing from the "getting started" guide linked in "Prerequisites" above. Append this to the index.php file you created there.
 
@@ -121,5 +121,5 @@ if ($session === null) {
 // 🎉 At this point we have an authenticated user session accessible from $session; your application logic can continue from here!
 echo "Authenticated!";
 
-*/
+
 ?>
