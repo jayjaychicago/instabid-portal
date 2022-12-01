@@ -33,7 +33,7 @@ $auth0 = new \Auth0\SDK\Auth0([
 use Steampixel\Route;
 
 // Define route constants:
-define('ROUTE_URL_INDEX', rtrim($_ENV['https://portal.instabid.io'], '/'));
+define('ROUTE_URL_INDEX', rtrim('https://portal.instabid.io', '/'));
 define('ROUTE_URL_LOGIN', ROUTE_URL_INDEX . '/login');
 define('ROUTE_URL_CALLBACK', ROUTE_URL_INDEX . '/callback');
 define('ROUTE_URL_LOGOUT', ROUTE_URL_INDEX . '/logout');
