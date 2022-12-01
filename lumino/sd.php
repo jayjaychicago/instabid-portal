@@ -3,8 +3,10 @@
 <head>
 
 <?php
-echo "v1";
-// Import the Composer Autoloader to make the SDK classes accessible:
+echo "v2";
+/*
+	
+	// Import the Composer Autoloader to make the SDK classes accessible:
 require '../vendor/autoload.php';
 
 // Load our environment variables from the .env file:
@@ -17,7 +19,8 @@ $auth0 = new \Auth0\SDK\Auth0([
     'clientSecret' => $_ENV['AUTH0_CLIENT_SECRET'],
     'cookieSecret' => $_ENV['AUTH0_COOKIE_SECRET']
 ]);
-?>
+*/
+	?>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6R68SV1E7N"></script>
