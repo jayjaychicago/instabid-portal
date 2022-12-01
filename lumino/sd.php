@@ -15,7 +15,7 @@ echo "v1";
 require '../vendor/autoload.php';
 
 // Load our environment variables from the .env file:
-(Dotenv\Dotenv::createImmutable(__DIR__))->load();
+//(Dotenv\Dotenv::createImmutable(__DIR__))->load();
 
 $env_array =getenv();
 
