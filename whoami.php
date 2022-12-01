@@ -41,7 +41,7 @@ if ($session === null) {
     // User is not logged in!
     // Redirect to the Universal Login Page for authentication.
     // header("Location: " . $auth0->login());
-    echo "We made it here!";
+     header("Location: " . $auth0->login(ROUTE_URL_CALLBACK));
     exit;
 }
 
