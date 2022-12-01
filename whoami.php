@@ -1,25 +1,37 @@
 <?php
 
+require 'vendor/autoload.php';
+
+// Load our environment variables from the .env file:
+(Dotenv\Dotenv::createImmutable(__DIR__))->load();
+
+
+// This is all setup in AWS ELB at: https://us-east-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-east-2#/environment/configuration?applicationName=Instabid&environmentId=e-e2vtbrvebm
+// In the "software" config portion of the ELB
+
+
+$auth0 = new \Auth0\SDK\Auth0([
+  'domain' => $_ENV['AUTH0_DOMAIN'],
+  'clientId' => $_ENV['AUTH0_CLIENT_ID'],
+  'clientSecret' => $_ENV['AUTH0_CLIENT_SECRET'],
+  'cookieSecret' => $_ENV['AUTH0_COOKIE_SECRET'],
+    'redirectUri' => 'https://portal.instabid.io/lumino/sd.php'
+]); 
+
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-// ✋ We don't need to include this in our sample application, it's just an example.
-$name = $session->user['name'] ?? $session->user['nickname'] ?? $session->user['email'] ?? 'Unknown';
-echo $session;
+$userInfo = $auth0->getUser();
 
-printf(
-    '<h1>Hi %s!</h1>
-    <p><img width="100" src="/docs/%s"></p>
-    <p><strong>Last update:</strong> %s</p>
-    <p><strong>Contact:</strong> %s %s</p>
-    <p><a href="/docs/logout.php">Logout</a></p>',
-    isset($session->user['nickname']) ? strip_tags($session->user['nickname']) : '[unknown]',
-    isset($session->user['picture']) ? filter_var($session->user['picture'], FILTER_SANITIZE_URL) : 'https://gravatar.com/avatar/',
-    isset($session->user['updated_at']) ? date('j/m/Y', strtotime($session->user['updated_at'])) : '[unknown]',
-    isset($session->user['email']) ? filter_var($session->user['email'], FILTER_SANITIZE_EMAIL) : '[unknown]',
-    ! empty($session->user['email_verified']) ? '✓' : '✗'
-);
+echo $userInfo;
+echo "<h3>The list of userInfo variables with values are :</h3>";
+//Print all environment variable names with values
+foreach ($userInfo as $key=>$value)
+{
+    echo "$key => $value <br />";
+}
 
 ?>
