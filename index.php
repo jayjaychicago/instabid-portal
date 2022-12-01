@@ -21,3 +21,10 @@ error_reporting(E_ALL);
 
   require('router.php');
   ?>
+  <html>
+<head></head>
+  <body>
+  <a href="/login.php">login</a>
+
+</body>
+</html>
