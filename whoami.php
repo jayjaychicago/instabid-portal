@@ -27,13 +27,9 @@ error_reporting(E_ALL);
 
 
 $userInfo = $auth0->getUser();
-
-echo $userInfo;
-echo "<h3>The list of userInfo variables with values are :</h3>";
-//Print all environment variable names with values
-foreach ($userInfo as $key=>$value)
-{
-    echo "$key => $value <br />";
+if ($userInfo === null) {
+  echo "damn, it's null";
 }
+echo $userInfo;
 
 ?>
