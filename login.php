@@ -114,13 +114,13 @@ if ($auth0->getExchangeParameters()) {
 
 // Check if the user is logged in already
 $session = $auth0->getCredentials();
-$_SESSION["auth0User"]=$session;
 
 
 if ($session === null) {
     // User is not logged in!
     // Redirect to the Universal Login Page for authentication.
-    header("Location: " . $auth0->login());
+    // header("Location: " . $auth0->login());
+    echo "We made it here!";
     exit;
 }
 
