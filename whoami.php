@@ -21,11 +21,6 @@ $auth0 = new \Auth0\SDK\Auth0([
 ]); 
 
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-
 $userInfo = $auth0->getUser();
 if ($userInfo === null) {
   echo "damn, it's null";
