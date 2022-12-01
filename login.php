@@ -89,4 +89,27 @@ Route::add('/logout', function() use ($auth0) {
 
 Route::run('/');
 
+
+// 👆 We're continuing from the "getting started" guide linked in "Prerequisites" above. Append this to the index.php file you created there.
+
+// getExchangeParameters() can be used on your callback URL to verify all the necessary parameters are present for post-authentication code exchange.
+if ($auth0->getExchangeParameters()) {
+    // If they're present, we should perform the code exchange.
+    $auth0->exchange();
+}
+
+// Check if the user is logged in already
+$session = $auth0->getCredentials();
+
+if ($session === null) {
+    // User is not logged in!
+    // Redirect to the Universal Login Page for authentication.
+    header("Location: " . $auth0->login());
+    exit;
+}
+
+// 🎉 At this point we have an authenticated user session accessible from $session; your application logic can continue from here!
+echo "Authenticated!";
+
+
 ?>
