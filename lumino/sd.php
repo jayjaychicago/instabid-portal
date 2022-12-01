@@ -8,7 +8,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 echo "v2";
 
-$auth0 = new ..\Auth0\SDK\Auth0([
+$auth0 = new \Auth0\SDK\Auth0([
   'domain' => $_ENV['AUTH0_DOMAIN'],
   'clientId' => $_ENV['AUTH0_CLIENT_ID'],
   'clientSecret' => $_ENV['AUTH0_CLIENT_SECRET'],
