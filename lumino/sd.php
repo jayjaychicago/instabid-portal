@@ -21,7 +21,7 @@ error_reporting(E_ALL);
 
   $sdk = new Auth0($configuration);
 
-  require('router.php');
+  require('../router.php');
 ?>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
