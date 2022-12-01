@@ -2,61 +2,6 @@
 <html>
 <head>
 
-<?php
-	
-	ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-echo "v2";
-require '../vendor/autoload.php';
-$auth0 = new \Auth0\SDK\Auth0([
-  'domain' => $_ENV['AUTH0_DOMAIN'],
-  'clientId' => $_ENV['AUTH0_CLIENT_ID'],
-  'clientSecret' => $_ENV['AUTH0_CLIENT_SECRET'],
-  'cookieSecret' => $_ENV['AUTH0_COOKIE_SECRET']
-]); 
-	// 👆 We're continuing from the "getting started" guide linked in "Prerequisites" above. Append this to the index.php file you created there.
-
-	/*
-// getExchangeParameters() can be used on your callback URL to verify all the necessary parameters are present for post-authentication code exchange.
-if ($auth0->getExchangeParameters()) {
-    // If they're present, we should perform the code exchange.
-    $auth0->exchange();
-}
-*/
-	
-// Check if the user is logged in already
-$session = $auth0->getCredentials();
-
-if ($session === null) {
-    // User is not logged in!
-    // Redirect to the Universal Login Page for authentication.
-    header("Location: " . $auth0->login());
-    exit;
-}
-else { 
-	echo "Gotcha!";
-}
-	
-	
-/*
-	
-	// Import the Composer Autoloader to make the SDK classes accessible:
-require '../vendor/autoload.php';
-
-// Load our environment variables from the .env file:
-(Dotenv\Dotenv::createImmutable(__DIR__))->load();
-
-// Now instantiate the Auth0 class with our configuration:
-$auth0 = new \Auth0\SDK\Auth0([
-    'domain' => $_ENV['AUTH0_DOMAIN'],
-    'clientId' => $_ENV['AUTH0_CLIENT_ID'],
-    'clientSecret' => $_ENV['AUTH0_CLIENT_SECRET'],
-    'cookieSecret' => $_ENV['AUTH0_COOKIE_SECRET']
-]);
-*/
-	?>
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6R68SV1E7N"></script>
 <script>
