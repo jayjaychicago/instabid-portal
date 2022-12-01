@@ -11,6 +11,24 @@ require 'vendor/autoload.php';
 // Load our environment variables from the .env file:
 (Dotenv\Dotenv::createImmutable(__DIR__))->load();
 
+// can't be bothered trying to figure out aws php env variables so hardcoding them here. TODO: FIGURE THIS OUT
+# The URL of our Auth0 Tenant Domain.
+# If we're using a Custom Domain, be sure to set this to that value instead.
+$_ENV['AUTH0_DOMAIN']='https://dev-4lodh4ux8xq4milm.us.auth0.com'
+
+# Our Auth0 application's Client ID.
+$_ENV['AUTH0_CLIENT_ID']='u9DKrKOTgaiFu76SkPn4u7VHPpV5xZCw'
+
+# Our Auth0 application's Client Secret.
+$_ENV['AUTH0_CLIENT_SECRET']='T4ywxzfVC34VK4SUKghb-Ss53p24iU43AaWhQYMpsSl0iflKhAvnBnMqGBS7gXtT'
+
+# A long secret value we'll use to encrypt session cookies. This can be generated using `openssl rand -hex 32` from our shell.
+$_ENV['AUTH0_COOKIE_SECRET']='SEE COMMENT ABOVE'
+
+# The base URL of our application.
+$_ENV['AUTH0_BASE_URL']='http://127.0.0.1:3000'
+
+
 // Now instantiate the Auth0 class with our configuration:
 $auth0 = new \Auth0\SDK\Auth0([
     'domain' => 'https://dev-4lodh4ux8xq4milm.us.auth0.com',
