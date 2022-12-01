@@ -80,6 +80,7 @@ Route::add('/logout', function() use ($auth0) {
 
 Route::run('/');
 
+echo $auth0->logout();
 
 header($auth0->logout());
 ?>
