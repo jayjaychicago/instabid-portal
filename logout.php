@@ -85,7 +85,7 @@ Route::run('/');
 //header($auth0->logout());
 
     
- echo "<script type='text/javascript'>window.top.location='" . echo $auth0->logout() . "';</script>"; exit;   
+ echo "<script type='text/javascript'>window.top.location='" . echo $auth0->logout() . "';</script>";  
 exit();
 ?>
     
