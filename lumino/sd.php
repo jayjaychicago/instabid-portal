@@ -37,8 +37,9 @@ $auth0 = new \Auth0\SDK\Auth0([
   'clientSecret' => $_ENV['AUTH0_CLIENT_SECRET'],
   'cookieSecret' => $_ENV['AUTH0_COOKIE_SECRET'],
     'redirectUri' => 'https://portal.instabid.io/lumino/sd.php'
-]); 
-
+]);
+	var_dump($auth0);
+	die();
 // 👆 We're continuing from the steps above. Append this to your index.php file.
 
 
