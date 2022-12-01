@@ -11,8 +11,18 @@ require 'vendor/autoload.php';
 // Load our environment variables from the .env file:
 (Dotenv\Dotenv::createImmutable(__DIR__))->load();
 
-while (list($var,$value) = each ($_ENV)) {
-    echo "$var => $value <br />";
+$env_array =getenv();
+
+echo "<h3>The list of environment variables with values are :</h3>";
+
+//Print all environment variable names with values
+
+foreach ($env_array as $key=>$value)
+
+{
+
+    echo "$key => $value <br />";
+
 }
 
 // Now instantiate the Auth0 class with our configuration:
