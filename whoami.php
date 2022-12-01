@@ -42,11 +42,6 @@ $auth0 = new \Auth0\SDK\Auth0([
 
 // 👆 We're continuing from the "getting started" guide linked in "Prerequisites" above. Append this to the index.php file you created there.
 
-// getExchangeParameters() can be used on your callback URL to verify all the necessary parameters are present for post-authentication code exchange.
-if ($auth0->getExchangeParameters()) {
-    // If they're present, we should perform the code exchange.
-    $auth0->exchange();
-}
 
 // Check if the user is logged in already
 $session = $auth0->getCredentials();
