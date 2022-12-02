@@ -24,7 +24,7 @@ error_reporting(E_ALL);
     'client_id' => $_ENV['AUTH0_CLIENT_ID'],
     'client_secret' => $_ENV['AUTH0_CLIENT_SECRET'],
     'redirect_uri' => 'https://' . $_SERVER['HTTP_HOST'] . '/callback.php',
-    'audience' => 'https://myphpnotes.auth0.com/userinfo',
+   // 'audience' => 'https://myphpnotes.auth0.com/userinfo',
     'persist_id_token' => true,
     'persist_access_token' => true,
     'persist_refresh_token' => true,
