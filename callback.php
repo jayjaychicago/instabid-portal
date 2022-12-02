@@ -29,6 +29,6 @@
   }
 
   // Nothing to do: redirect to index route.
-  header('Location: /lumino/profile.php');
+  header('Location: /lumino/sd.php');
 
   ?>
