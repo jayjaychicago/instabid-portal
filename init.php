@@ -3,15 +3,10 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-session_start();
 
   require('vendor/autoload.php');
 
   (Dotenv\Dotenv::createImmutable(__DIR__))->load();
-
-while (list($var,$value) = each ($_ENV)) {
-    echo "$var => $value <br />";
-}
 
   use Auth0\SDK\Auth0;
   use Auth0\SDK\Configuration\SdkConfiguration;
