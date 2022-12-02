@@ -45,6 +45,7 @@ class ComposerStaticInit317416576ca09a78dd7a6e12fe6b78a2
             'Http\\Promise\\' => 13,
             'Http\\Message\\MultipartStream\\' => 29,
             'Http\\Message\\' => 13,
+            'Http\\Factory\\Guzzle\\' => 20,
             'Http\\Discovery\\' => 15,
             'Http\\Client\\' => 12,
         ),
@@ -134,6 +135,10 @@ class ComposerStaticInit317416576ca09a78dd7a6e12fe6b78a2
         'Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+        ),
+        'Http\\Factory\\Guzzle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/http-interop/http-factory-guzzle/src',
         ),
         'Http\\Discovery\\' => 
         array (

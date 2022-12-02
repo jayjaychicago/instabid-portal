@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "auth0/auth0-php",
-            "version": "8.3.7",
-            "version_normalized": "8.3.7.0",
+            "version": "8.3.8",
+            "version_normalized": "8.3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/auth0/auth0-PHP.git",
-                "reference": "c97edba1d0584dfc7fdb2b22280394d350870ca3"
+                "reference": "cb15b21273b516bcb76aee4f9ee652f9fe3c3968"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/auth0/auth0-PHP/zipball/c97edba1d0584dfc7fdb2b22280394d350870ca3",
-                "reference": "c97edba1d0584dfc7fdb2b22280394d350870ca3",
+                "url": "https://api.github.com/repos/auth0/auth0-PHP/zipball/cb15b21273b516bcb76aee4f9ee652f9fe3c3968",
+                "reference": "cb15b21273b516bcb76aee4f9ee652f9fe3c3968",
                 "shasum": ""
             },
             "require": {
@@ -31,6 +31,7 @@
                 "psr/http-message-implementation": "^1.0"
             },
             "require-dev": {
+                "ergebnis/composer-normalize": "^2.28",
                 "firebase/php-jwt": "^6.3",
                 "hyperf/event": "^2.2",
                 "laravel/pint": "^1.2",
@@ -47,7 +48,7 @@
                 "vimeo/psalm": "^4.30",
                 "wikimedia/composer-merge-plugin": "^2.0"
             },
-            "time": "2022-11-08T02:26:35+00:00",
+            "time": "2022-12-02T07:16:25+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -66,7 +67,7 @@
                     "homepage": "https://auth0.com/"
                 }
             ],
-            "description": "Auth0 PHP SDK. Straight-forward and tested methods for accessing Auth0 Authentication and Management API endpoints.",
+            "description": "PHP SDK for Auth0 Authentication and Management APIs.",
             "homepage": "https://github.com/auth0/auth0-PHP",
             "keywords": [
                 "Authentication",
@@ -86,7 +87,7 @@
             ],
             "support": {
                 "issues": "https://github.com/auth0/auth0-PHP/issues",
-                "source": "https://github.com/auth0/auth0-PHP/tree/8.3.7"
+                "source": "https://github.com/auth0/auth0-PHP/tree/8.3.8"
             },
             "install-path": "../auth0/auth0-php"
         },
@@ -494,6 +495,67 @@
                 }
             ],
             "install-path": "../guzzlehttp/psr7"
+        },
+        {
+            "name": "http-interop/http-factory-guzzle",
+            "version": "1.2.0",
+            "version_normalized": "1.2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/http-interop/http-factory-guzzle.git",
+                "reference": "8f06e92b95405216b237521cc64c804dd44c4a81"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/http-interop/http-factory-guzzle/zipball/8f06e92b95405216b237521cc64c804dd44c4a81",
+                "reference": "8f06e92b95405216b237521cc64c804dd44c4a81",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/psr7": "^1.7||^2.0",
+                "php": ">=7.3",
+                "psr/http-factory": "^1.0"
+            },
+            "provide": {
+                "psr/http-factory-implementation": "^1.0"
+            },
+            "require-dev": {
+                "http-interop/http-factory-tests": "^0.9",
+                "phpunit/phpunit": "^9.5"
+            },
+            "suggest": {
+                "guzzlehttp/psr7": "Includes an HTTP factory starting in version 2.0"
+            },
+            "time": "2021-07-21T13:50:14+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Http\\Factory\\Guzzle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "An HTTP Factory using Guzzle PSR7",
+            "keywords": [
+                "factory",
+                "http",
+                "psr-17",
+                "psr-7"
+            ],
+            "support": {
+                "issues": "https://github.com/http-interop/http-factory-guzzle/issues",
+                "source": "https://github.com/http-interop/http-factory-guzzle/tree/1.2.0"
+            },
+            "install-path": "../http-interop/http-factory-guzzle"
         },
         {
             "name": "nyholm/psr7",
