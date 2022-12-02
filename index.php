@@ -17,8 +17,9 @@ session_start();
     redirectUri: 'http://' . $_SERVER['HTTP_HOST'] . '/callback',
     cookieSecret: '9c04c9cccd5f7bdc4e5b7ba41cf8d53528db5704e051d89bd3e3379e0ab83c2c'
   );
-global $sdk;
+
 $sdk = new Auth0($configuration);
+$GLOBALS['sdk'] = $sdk;
 
 var_dump( $sdk);
   require('router.php');
