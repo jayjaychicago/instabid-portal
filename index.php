@@ -3,6 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+session_start();
 
   require('vendor/autoload.php');
 
@@ -18,6 +19,7 @@ error_reporting(E_ALL);
   );
 
   $sdk = new Auth0($configuration);
+$_SESSION[auth0_sdk] = $sdk;
 var_dump( $sdk);
   require('router.php');
   ?>
