@@ -19,7 +19,7 @@ session_start();
   );
 
   $sdk = new Auth0($configuration);
-$_SESSION["auth0_sdk"] = $sdk;
+
 var_dump( $sdk);
   require('router.php');
   ?>
