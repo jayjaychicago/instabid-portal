@@ -56,7 +56,8 @@ Route::add('/login', function() use ($auth0) {
 
 Route::add('/callback', function() use ($auth0) {
     // Have the SDK complete the authentication flow:
-    $auth0->exchange("https://portal.instabid.io/callback");
+    $auth0->exchange("ROUTE_URL_CALLBACK");
+
     // Finally, redirect our end user back to the / index route, to display their user profile:
     //echo "hello there!";
     header("Location: " . ROUTE_URL_INDEX);
