@@ -59,8 +59,8 @@ Route::add('/callback', function() use ($auth0) {
     //$auth0->exchange(ROUTE_URL_CALLBACK);
 
     // Finally, redirect our end user back to the / index route, to display their user profile:
-    echo "hello there!";
-    //header("Location: " . ROUTE_URL_INDEX);
+    //echo "hello there!";
+    header("Location: " . ROUTE_URL_INDEX);
     exit;
 });
 
