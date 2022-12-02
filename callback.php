@@ -1,7 +1,9 @@
 <?php
 
   declare(strict_types=1);
-
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
   /**
    * Upon returning from the Auth0 Universal Login, we need to perform a code exchange using the `exchange()` method
    * to complete the authentication flow. This process configures the session for use by the application.
