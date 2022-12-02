@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -6,14 +7,14 @@ session_start();
 
   require('vendor/autoload.php');
 
-  use Auth0\SDK\Auth0;
-  use Auth0\SDK\Configuration\SdkConfiguration;
-
   (Dotenv\Dotenv::createImmutable(__DIR__))->load();
 
-  while (list($var,$value) = each ($_ENV)) {
-      echo "$var => $value <br />";
-  }
+while (list($var,$value) = each ($_ENV)) {
+    echo "$var => $value <br />";
+}
+
+  use Auth0\SDK\Auth0;
+  use Auth0\SDK\Configuration\SdkConfiguration;
 
   $configuration = new SdkConfiguration(
     domain: $_ENV['AUTH0_DOMAIN'],
@@ -25,6 +26,4 @@ session_start();
 
 $sdk = new Auth0($configuration);
 
-
-header(sprintf('Location: %s', $sdk->login()));
 ?>
