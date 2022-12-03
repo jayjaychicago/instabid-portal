@@ -58,7 +58,9 @@ Route::add('/login', function() use ($auth0) {
 
 Route::add('/callback', function() use ($auth0) {
     // Have the SDK complete the authentication flow:
-    echo $_GET['link'];
+    echo $_GET['code'];
+    echo " - ";
+    echo $_GET['state'];
 //    $auth0->exchange("ROUTE_URL_CALLBACK");
     // Finally, redirect our end user back to the / index route, to display their user profile:
     //echo "hello there!";
