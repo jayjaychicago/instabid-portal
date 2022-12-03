@@ -36,6 +36,20 @@ $sdk = new Auth0($configuration);
   if ($hasAuthenticated) {
     try {
       $sdk->exchange();
+      $session = $auth0->getCredentials();
+
+      if ($session === null) {
+          // The user isn't logged in.
+          echo '<p>Please <a href="/login">log in</a>.</p>';
+          return;
+      }
+  
+      // The user is logged in.
+      echo '<pre>';
+      print_r($session->user);
+      echo '</pre>';
+  
+      echo '<p>You can now <a href="/logout">log out</a>.</p>';
     } catch (\Throwable $th) {
       printf('Unable to complete authentication: %s', $th->getMessage());
       exit;
