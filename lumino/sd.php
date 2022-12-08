@@ -3,6 +3,40 @@
 <head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6R68SV1E7N"></script>
+<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6.0.1/lib/index.min.js"></script>
+<script>
+	// When using loose Javascript files:
+var CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
+
+// Modules, e.g. Webpack:
+var AmazonCognitoIdentity = require('amazon-cognito-identity-js');
+var CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
+
+// ES Modules, e.g. transpiling with Babel
+import {
+	CognitoUserPool,
+	CognitoUserAttribute,
+	CognitoUser,
+} from 'amazon-cognito-identity-js';
+
+var poolData = {
+	UserPoolId: 'us-east-2_v4JlmiysA', // Your user pool id here
+	ClientId: '19pmagevukcnjlqpt0ccit5qh4', // Your client id here
+};
+var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+	
+cognitoUser.getUserAttributes(function(err, result) {
+	if (err) {
+		alert(err.message || JSON.stringify(err));
+		return;
+	}
+	for (i = 0; i < result.length; i++) {
+		console.log(
+			'attribute ' + result[i].getName() + ' has value ' + result[i].getValue()
+		);
+	}
+});	
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
