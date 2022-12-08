@@ -1,3 +1,3 @@
 <?php
-header("Location: https://portal.instabid.io/lumino/sd.php");
+header("Location: /lumino/sd.php?exchange=TEST&product=test");
 ?>
